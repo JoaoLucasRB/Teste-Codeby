@@ -60,3 +60,5 @@ Atingindo os requisitos mínimos, você poderá explorar a API e o layout**. U**
 - JSON Keeper - Hospedagem do JSON com os produtos
 
 ![image](https://user-images.githubusercontent.com/32493395/149389548-77344b07-d394-45ab-a311-d47160dfea92.png)
+
+![image](https://user-images.githubusercontent.com/32493395/149389706-248e6d72-451c-42a3-b7ec-c8e3f2f28b41.png)
