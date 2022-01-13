@@ -1,6 +1,5 @@
 // import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import data from '../resources/data/acima-10-reais.json';
 import { Product } from '../types'
 import { useEffect, useState } from 'react';
 import { Body } from '../components/Body';
