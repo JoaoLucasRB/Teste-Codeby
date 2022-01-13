@@ -1,5 +1,6 @@
 // import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+import data from '../resources/data/acima-10-reais.json';
 import { Product } from '../types'
 import { useEffect, useState } from 'react';
 import { Body } from '../components/Body';
@@ -9,22 +10,12 @@ import { api } from '../services/api';
 import GlobalStyle from '../styles/globalstyle';
 import { CartProvider } from '../hooks/useCart';
 import { Footer } from '../components/Footer';
+import { GetServerSideProps } from 'next';
 
-export default function Home() {
-  // Substituir por getServerSideProps
-  const [products, setProducts] = useState<Product[]>([]);
-  useEffect(() => {
-    async function loadProducts() {
-      await api.get('products')
-        .then(response => setProducts(response.data));
-    }
-
-    loadProducts();
-  }, []);
-  // Fim
+export default function Home({products}) {
 
   return (
-    <ProductsProvider products={products} /** products={props.products} */>
+    <ProductsProvider products={products}>
       <CartProvider>
         <Head>
           <title>Teste Codeby</title>
@@ -41,12 +32,12 @@ export default function Home() {
   );
 }
 
-/** export const getServerSideProps: GetServerSideProps = async () => {
- // Request API
- const response = api.get('products') 
+export const getServerSideProps: GetServerSideProps = async () => {
+  // Request API
+  //  const response = api.get('products')  
   return {
-    props {
-      products: response.data
+    props: {
+      products: /* reponse. */ data.items
     }
   }
-} */
+}

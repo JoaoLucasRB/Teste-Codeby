@@ -1,4 +1,4 @@
-import dataProducts from './resources/mirage/acima-10-reais.json';
+import dataProducts from './resources/data/acima-10-reais.json';
 
 import { createServer, Model } from "miragejs";
 

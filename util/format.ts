@@ -1,3 +1,3 @@
 export const formatPrice = (value: number) => {
-  return `R$ ${String(value.toFixed(2)).replaceAll('.',',')}`
+  return `R$ ${String(value.toFixed(2)).replace('.',',')}`
 }
