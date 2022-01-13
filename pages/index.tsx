@@ -34,10 +34,10 @@ export default function Home({products}) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // Request API
-  //  const response = api.get('products')  
+  const response = await api.get('https://jsonkeeper.com/b/D6Q4')
   return {
     props: {
-      products: /* reponse. */ data.items
+      products: response.data.items
     }
   }
 }
