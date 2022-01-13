@@ -50,9 +50,10 @@ export function CartProvider({ children }: CartProviderProps) {
         return;
       } else {
         const product = products.find(product => product.id === productId);
-        if (product.data) {
+        console.log('prod', product);
+        if (product) {
           const newProduct = {
-            ...product.data,
+            ...product,
             amount
           }
           updatedCart.push(newProduct);
