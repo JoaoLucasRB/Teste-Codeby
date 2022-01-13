@@ -2,6 +2,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import { api } from "../services/api";
 import { Product } from "../types";
 import Swal from 'sweetalert2';
+import { useProducts } from "./useProducts";
 
 interface CartProviderProps {
   children: ReactNode
@@ -23,6 +24,7 @@ interface CartContextData {
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps) {
+  const { products } = useProducts();
   const [cart, setCart] = useState<Product[]>(() => {
     if (typeof window !== 'undefined') {
       const storagedCart = localStorage.getItem("@seuze:cart");
@@ -47,7 +49,7 @@ export function CartProvider({ children }: CartProviderProps) {
         });
         return;
       } else {
-        const product = await api.get(`products/${productId}`);
+        const product = products.find(product => product.id === productId);
         if (product.data) {
           const newProduct = {
             ...product.data,
