@@ -58,3 +58,5 @@ Atingindo os requisitos mínimos, você poderá explorar a API e o layout**. U**
 ### **Ferramentas Deploy:**
 - Netlify - Hospedagem do aplicativo
 - JSON Keeper - Hospedagem do JSON com os produtos
+
+![image](https://user-images.githubusercontent.com/32493395/149389548-77344b07-d394-45ab-a311-d47160dfea92.png)
